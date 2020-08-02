@@ -58,13 +58,14 @@ resource "google_compute_router" "default" {
   region  = var.gcp_region
 }
 
-module "cloud-nat-group1" {
-  source     = "terraform-google-modules/cloud-nat/google"
-  version    = "1.0.0"
-  router     = google_compute_router.default.name
-  project_id = var.gcp_project
-  region     = var.gcp_region
-  name       = "default"
+resource "google_compute_router_nat" "default" {
+  name   = "default"
+  router = google_compute_router.default.name
+  region = google_compute_router.default.region
+  # https://www.terraform.io/docs/providers/google/r/compute_router_nat.html#source_subnetwork_ip_ranges_to_nat
+  source_subnetwork_ip_ranges_to_nat = "ALL_SUBNETWORKS_ALL_IP_RANGES"
+  # https://www.terraform.io/docs/providers/google/r/compute_router_nat.html#nat_ip_allocate_option
+  nat_ip_allocate_option = "AUTO_ONLY"
 }
 
 resource "google_compute_region_instance_group_manager" "default" {
