@@ -195,4 +195,9 @@ resource "tls_self_signed_cert" "example" {
   }
 }
 
-# google_compute_global_forwarding_rule
+resource "google_compute_global_forwarding_rule" "default" {
+  name   = "default"
+  target = google_compute_target_https_proxy.default.self_link
+  # https://www.terraform.io/docs/providers/google/r/compute_global_forwarding_rule.html#port_range
+  port_range = "443"
+}
