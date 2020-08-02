@@ -106,11 +106,6 @@ resource "google_compute_region_autoscaler" "default" {
 resource "google_compute_health_check" "mig_health_check" {
   name = "default"
 
-  check_interval_sec  = 30
-  timeout_sec         = 10
-  healthy_threshold   = 1
-  unhealthy_threshold = 10
-
   http_health_check {
     port = 80
   }
