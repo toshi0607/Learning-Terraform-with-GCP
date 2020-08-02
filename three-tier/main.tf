@@ -146,10 +146,12 @@ resource "google_compute_backend_service" "backend1" {
   health_checks = [google_compute_health_check.mig_health_check.self_link]
 }
 
+resource "google_compute_url_map" "default" {
+  name            = "default"
+  default_service = google_compute_backend_service.backend1.self_link
+}
+
 # google_compute_global_forwarding_rule
 # google_compute_target_https_proxy
-# google_compute_url_map
-# google_compute_backend_service
-#   mig, google_compute_backend_bucket
 # google_compute_ssl_certificate
 # google_compute_global_address => Reservedなやつでなくていい
