@@ -31,7 +31,7 @@ Samples are explained in the below books.
 
 * [Remote backend](./remote-backend)
 * [Separate state by backend end environment](./state-separation)
-* [terraforer](./terraformer-test)
+* [terraformer](./terraformer-test)
 
 ## Practical edition
 
