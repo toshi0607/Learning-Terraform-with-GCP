@@ -8,4 +8,5 @@ $ export GOOGLE_PROJECT=terraform-toshi0607
 $ terraform init
 $ terraform plan
 $ terraform apply
+$ terraform destroy
 ```
