@@ -6,9 +6,9 @@ terraform {
 }
 
 provider "google" {
-  project = "terraform-toshi0607"
+  # project = "terraform-toshi0607"
   # 【YOUR PROJECT】をあなたのGCPプロジェクトに置き換えてください。
-  # project = 【YOUR PROJECT】
+  project = 【YOUR PROJECT】
   zone    = "asia-northeast1-a"
 }
 
