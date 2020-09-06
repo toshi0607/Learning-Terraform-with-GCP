@@ -1,3 +1,5 @@
+# 利用する場合は拡張子の .sample 部分を削除してください
+
 # project = "terraform-toshi0607"
 # dev用と別projectを指定すると環境の分離度が増します
 # 【YOUR PROJECT】をあなたのGCPプロジェクトに置き換えてください。

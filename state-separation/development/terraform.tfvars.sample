@@ -1,3 +1,5 @@
+# 利用する場合は拡張子の .sample 部分を削除してください
+
 # project = "terraform-toshi0607"
 # 【YOUR PROJECT】をあなたのGCPプロジェクトに置き換えてください。
 project = 【YOUR PROJECT】
