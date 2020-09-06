@@ -1,0 +1,6 @@
+# project = "terraform-toshi0607"
+# dev用と別projectを指定すると環境の分離度が増します
+# 【YOUR PROJECT】をあなたのGCPプロジェクトに置き換えてください。
+project = 【YOUR PROJECT】
+region  = "asia-northeast1"
+zone    = "asia-northeast1-a"

@@ -1,0 +1,5 @@
+# project = "terraform-toshi0607"
+# 【YOUR PROJECT】をあなたのGCPプロジェクトに置き換えてください。
+project = 【YOUR PROJECT】
+region  = "asia-northeast1"
+zone    = "asia-northeast1-a"
