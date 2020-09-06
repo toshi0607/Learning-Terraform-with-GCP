@@ -5,10 +5,6 @@ terraform {
     bucket = 【YOUR BUCKET】
     prefix  = "terraform/test_instance/state"
   }
-
-  required_providers {
-    google = ">= 3.33.0"
-  }
 }
 
 provider "google" {
@@ -17,8 +13,8 @@ provider "google" {
   zone    = var.zone
 }
 
-module "test_instance_prod" {
-  source = "./modules"
+module "test_instance" {
+  source = "../modules"
 
   project      = var.project
   zone         = var.zone
