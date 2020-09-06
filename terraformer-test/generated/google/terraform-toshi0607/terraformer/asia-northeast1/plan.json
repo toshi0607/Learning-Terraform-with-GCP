@@ -1,0 +1,194 @@
+{
+	"Version": "v0.8.8",
+	"Provider": "google",
+	"Options": {
+		"Resources": [
+			"instances"
+		],
+		"PathPattern": "{output}/{provider}/terraform-toshi0607/{service}/asia-northeast1/",
+		"PathOutput": "generated",
+		"State": "local",
+		"Bucket": "",
+		"Profile": "",
+		"Verbose": false,
+		"Zone": "",
+		"Regions": [
+			"asia-northeast1"
+		],
+		"Projects": [
+			"terraform-toshi0607"
+		],
+		"Connect": true,
+		"Compact": false,
+		"Filter": [
+			"google_compute_instance=test-terraformer"
+		],
+		"Output": "hcl"
+	},
+	"Args": [
+		"asia-northeast1",
+		"terraform-toshi0607"
+	],
+	"ImportedResource": {
+		"instances": [
+			{
+				"InstanceInfo": {
+					"Id": "google_compute_instance.tfer--test-002D-terraformer",
+					"ModulePath": null,
+					"Type": "google_compute_instance"
+				},
+				"InstanceState": {
+					"id": "projects/terraform-toshi0607/zones/asia-northeast1-a/instances/test-terraformer",
+					"attributes": {
+						"attached_disk.#": "0",
+						"boot_disk.#": "1",
+						"boot_disk.0.auto_delete": "true",
+						"boot_disk.0.device_name": "test-terraformer",
+						"boot_disk.0.disk_encryption_key_raw": "",
+						"boot_disk.0.disk_encryption_key_sha256": "",
+						"boot_disk.0.initialize_params.#": "1",
+						"boot_disk.0.initialize_params.0.image": "https://www.googleapis.com/compute/v1/projects/debian-cloud/global/images/debian-9-stretch-v20200805",
+						"boot_disk.0.initialize_params.0.labels.%": "0",
+						"boot_disk.0.initialize_params.0.size": "10",
+						"boot_disk.0.initialize_params.0.type": "pd-standard",
+						"boot_disk.0.kms_key_self_link": "",
+						"boot_disk.0.mode": "READ_WRITE",
+						"boot_disk.0.source": "https://www.googleapis.com/compute/v1/projects/terraform-toshi0607/zones/asia-northeast1-a/disks/test-terraformer",
+						"can_ip_forward": "false",
+						"cpu_platform": "Intel Broadwell",
+						"current_status": "RUNNING",
+						"deletion_protection": "false",
+						"description": "",
+						"enable_display": "false",
+						"guest_accelerator.#": "0",
+						"hostname": "",
+						"id": "projects/terraform-toshi0607/zones/asia-northeast1-a/instances/test-terraformer",
+						"instance_id": "8264163386361731704",
+						"label_fingerprint": "42WmSpB8rSM=",
+						"labels.%": "0",
+						"machine_type": "e2-medium",
+						"metadata.%": "0",
+						"metadata_fingerprint": "aXCuda9UPV4=",
+						"metadata_startup_script": "",
+						"min_cpu_platform": "",
+						"name": "test-terraformer",
+						"network_interface.#": "1",
+						"network_interface.0.access_config.#": "1",
+						"network_interface.0.access_config.0.nat_ip": "34.84.186.207",
+						"network_interface.0.access_config.0.network_tier": "PREMIUM",
+						"network_interface.0.access_config.0.public_ptr_domain_name": "",
+						"network_interface.0.alias_ip_range.#": "0",
+						"network_interface.0.name": "nic0",
+						"network_interface.0.network": "https://www.googleapis.com/compute/v1/projects/terraform-toshi0607/global/networks/default",
+						"network_interface.0.network_ip": "10.146.0.41",
+						"network_interface.0.subnetwork": "https://www.googleapis.com/compute/v1/projects/terraform-toshi0607/regions/asia-northeast1/subnetworks/default",
+						"network_interface.0.subnetwork_project": "terraform-toshi0607",
+						"project": "terraform-toshi0607",
+						"resource_policies.#": "0",
+						"scheduling.#": "1",
+						"scheduling.0.automatic_restart": "true",
+						"scheduling.0.node_affinities.#": "0",
+						"scheduling.0.on_host_maintenance": "MIGRATE",
+						"scheduling.0.preemptible": "false",
+						"scratch_disk.#": "0",
+						"self_link": "https://www.googleapis.com/compute/v1/projects/terraform-toshi0607/zones/asia-northeast1-a/instances/test-terraformer",
+						"service_account.#": "1",
+						"service_account.0.email": "474715178574-compute@developer.gserviceaccount.com",
+						"service_account.0.scopes.#": "6",
+						"service_account.0.scopes.0": "https://www.googleapis.com/auth/devstorage.read_only",
+						"service_account.0.scopes.1": "https://www.googleapis.com/auth/logging.write",
+						"service_account.0.scopes.2": "https://www.googleapis.com/auth/monitoring.write",
+						"service_account.0.scopes.3": "https://www.googleapis.com/auth/service.management.readonly",
+						"service_account.0.scopes.4": "https://www.googleapis.com/auth/servicecontrol",
+						"service_account.0.scopes.5": "https://www.googleapis.com/auth/trace.append",
+						"shielded_instance_config.#": "0",
+						"tags.#": "0",
+						"tags_fingerprint": "42WmSpB8rSM=",
+						"zone": "asia-northeast1-a"
+					},
+					"meta": {
+						"schema_version": 6
+					},
+					"tainted": false
+				},
+				"ResourceName": "tfer--test-002D-terraformer",
+				"Provider": "google",
+				"Item": {
+					"boot_disk": [
+						{
+							"auto_delete": "true",
+							"device_name": "test-terraformer",
+							"initialize_params": [
+								{
+									"image": "https://www.googleapis.com/compute/v1/projects/debian-cloud/global/images/debian-9-stretch-v20200805",
+									"size": "10",
+									"type": "pd-standard"
+								}
+							],
+							"mode": "READ_WRITE",
+							"source": "https://www.googleapis.com/compute/v1/projects/terraform-toshi0607/zones/asia-northeast1-a/disks/test-terraformer"
+						}
+					],
+					"can_ip_forward": "false",
+					"deletion_protection": "false",
+					"enable_display": "false",
+					"machine_type": "e2-medium",
+					"name": "test-terraformer",
+					"network_interface": [
+						{
+							"access_config": [
+								{
+									"nat_ip": "34.84.186.207",
+									"network_tier": "PREMIUM"
+								}
+							],
+							"network": "https://www.googleapis.com/compute/v1/projects/terraform-toshi0607/global/networks/default",
+							"network_ip": "10.146.0.41",
+							"subnetwork": "https://www.googleapis.com/compute/v1/projects/terraform-toshi0607/regions/asia-northeast1/subnetworks/default",
+							"subnetwork_project": "terraform-toshi0607"
+						}
+					],
+					"project": "terraform-toshi0607",
+					"scheduling": [
+						{
+							"automatic_restart": "true",
+							"on_host_maintenance": "MIGRATE",
+							"preemptible": "false"
+						}
+					],
+					"service_account": [
+						{
+							"email": "474715178574-compute@developer.gserviceaccount.com",
+							"scopes": [
+								"https://www.googleapis.com/auth/servicecontrol",
+								"https://www.googleapis.com/auth/devstorage.read_only",
+								"https://www.googleapis.com/auth/trace.append",
+								"https://www.googleapis.com/auth/service.management.readonly",
+								"https://www.googleapis.com/auth/logging.write",
+								"https://www.googleapis.com/auth/monitoring.write"
+							]
+						}
+					],
+					"zone": "asia-northeast1-a"
+				},
+				"IgnoreKeys": [
+					"^id$",
+					"^instance_id$",
+					"^label_fingerprint$",
+					"^metadata_fingerprint$",
+					"^self_link$",
+					"^tags_fingerprint$",
+					"^current_status$",
+					"^cpu_platform$",
+					"^attached_disk.[0-9].disk_encryption_key_sha256($|\\.[0-9]|\\.#)",
+					"^boot_disk.[0-9].disk_encryption_key_sha256($|\\.[0-9]|\\.#)",
+					"^network_interface.[0-9].name($|\\.[0-9]|\\.#)"
+				],
+				"AllowEmptyValues": [
+					"labels."
+				],
+				"SlowQueryRequired": false
+			}
+		]
+	}
+}
