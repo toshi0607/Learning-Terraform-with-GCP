@@ -1,7 +1,8 @@
 terraform {
   backend "gcs" {
+    # bucket = "tf-state-toshi0607-20200827-dev"
     # 【YOUR BUCKET】を作成したバケット名に置き換えてください。
-    bucket  = 【YOUR BUCKET】
+    bucket = 【YOUR BUCKET】
     prefix = "terraform/state"
   }
 
@@ -11,6 +12,7 @@ terraform {
 }
 
 provider "google" {
+  # project = "terraform-toshi0607"
   # 【YOUR PROJECT】をあなたのGCPプロジェクトに置き換えてください。
   project = 【YOUR PROJECT】
   region  = "asia-northeast1"
