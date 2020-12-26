@@ -44,3 +44,7 @@ Samples are explained in the below books.
 ### Chapter 4 ~ 7, 9, 10 GKE + Microservices template
 
 Diffrent repository: [toshi0607/GKE-Microservices-Terraform-project-template](https://github.com/toshi0607/GKE-Microservices-Terraform-project-template)
+
+### Chapter 8 Lint and validation
+
+* [Lint and validation](./lint-and-validation/)
