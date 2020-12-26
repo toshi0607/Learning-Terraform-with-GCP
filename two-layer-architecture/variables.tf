@@ -13,8 +13,3 @@ variable "gcp_zone" {
   type        = string
   description = "GCP zone"
 }
-
-variable "gcp_auth_file_path" {
-  type        = string
-  description = "GCP authentication file path"
-}

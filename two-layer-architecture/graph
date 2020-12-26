@@ -1,0 +1,63 @@
+digraph {
+	compound = "true"
+	newrank = "true"
+	subgraph "root" {
+		"[root] google_compute_backend_service.backend1 (expand)" [label = "google_compute_backend_service.backend1", shape = "box"]
+		"[root] google_compute_firewall.default_ssh (expand)" [label = "google_compute_firewall.default_ssh", shape = "box"]
+		"[root] google_compute_firewall.mig_health_check (expand)" [label = "google_compute_firewall.mig_health_check", shape = "box"]
+		"[root] google_compute_global_forwarding_rule.default (expand)" [label = "google_compute_global_forwarding_rule.default", shape = "box"]
+		"[root] google_compute_health_check.mig_health_check (expand)" [label = "google_compute_health_check.mig_health_check", shape = "box"]
+		"[root] google_compute_instance_template.default (expand)" [label = "google_compute_instance_template.default", shape = "box"]
+		"[root] google_compute_region_autoscaler.default (expand)" [label = "google_compute_region_autoscaler.default", shape = "box"]
+		"[root] google_compute_region_instance_group_manager.default (expand)" [label = "google_compute_region_instance_group_manager.default", shape = "box"]
+		"[root] google_compute_router.default (expand)" [label = "google_compute_router.default", shape = "box"]
+		"[root] google_compute_router_nat.default (expand)" [label = "google_compute_router_nat.default", shape = "box"]
+		"[root] google_compute_ssl_certificate.example (expand)" [label = "google_compute_ssl_certificate.example", shape = "box"]
+		"[root] google_compute_target_https_proxy.default (expand)" [label = "google_compute_target_https_proxy.default", shape = "box"]
+		"[root] google_compute_url_map.default (expand)" [label = "google_compute_url_map.default", shape = "box"]
+		"[root] provider[\"registry.terraform.io/hashicorp/google\"]" [label = "provider[\"registry.terraform.io/hashicorp/google\"]", shape = "diamond"]
+		"[root] provider[\"registry.terraform.io/hashicorp/tls\"]" [label = "provider[\"registry.terraform.io/hashicorp/tls\"]", shape = "diamond"]
+		"[root] tls_private_key.example (expand)" [label = "tls_private_key.example", shape = "box"]
+		"[root] tls_self_signed_cert.example (expand)" [label = "tls_self_signed_cert.example", shape = "box"]
+		"[root] var.gcp_project" [label = "var.gcp_project", shape = "note"]
+		"[root] var.gcp_region" [label = "var.gcp_region", shape = "note"]
+		"[root] var.gcp_zone" [label = "var.gcp_zone", shape = "note"]
+		"[root] google_compute_backend_service.backend1 (expand)" -> "[root] google_compute_region_instance_group_manager.default (expand)"
+		"[root] google_compute_firewall.default_ssh (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/google\"]"
+		"[root] google_compute_firewall.mig_health_check (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/google\"]"
+		"[root] google_compute_global_forwarding_rule.default (expand)" -> "[root] google_compute_target_https_proxy.default (expand)"
+		"[root] google_compute_health_check.mig_health_check (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/google\"]"
+		"[root] google_compute_instance_template.default (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/google\"]"
+		"[root] google_compute_region_autoscaler.default (expand)" -> "[root] google_compute_region_instance_group_manager.default (expand)"
+		"[root] google_compute_region_instance_group_manager.default (expand)" -> "[root] google_compute_health_check.mig_health_check (expand)"
+		"[root] google_compute_region_instance_group_manager.default (expand)" -> "[root] google_compute_instance_template.default (expand)"
+		"[root] google_compute_router.default (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/google\"]"
+		"[root] google_compute_router_nat.default (expand)" -> "[root] google_compute_router.default (expand)"
+		"[root] google_compute_ssl_certificate.example (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/google\"]"
+		"[root] google_compute_ssl_certificate.example (expand)" -> "[root] tls_self_signed_cert.example (expand)"
+		"[root] google_compute_target_https_proxy.default (expand)" -> "[root] google_compute_ssl_certificate.example (expand)"
+		"[root] google_compute_target_https_proxy.default (expand)" -> "[root] google_compute_url_map.default (expand)"
+		"[root] google_compute_url_map.default (expand)" -> "[root] google_compute_backend_service.backend1 (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] google_compute_firewall.default_ssh (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] google_compute_firewall.mig_health_check (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] google_compute_region_autoscaler.default (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] google_compute_router_nat.default (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] output.external_ip (expand)"
+		"[root] output.external_ip (expand)" -> "[root] google_compute_global_forwarding_rule.default (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/google\"] (close)" -> "[root] google_compute_firewall.default_ssh (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/google\"] (close)" -> "[root] google_compute_firewall.mig_health_check (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/google\"] (close)" -> "[root] google_compute_global_forwarding_rule.default (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/google\"] (close)" -> "[root] google_compute_region_autoscaler.default (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/google\"] (close)" -> "[root] google_compute_router_nat.default (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/google\"]" -> "[root] var.gcp_project"
+		"[root] provider[\"registry.terraform.io/hashicorp/google\"]" -> "[root] var.gcp_region"
+		"[root] provider[\"registry.terraform.io/hashicorp/google\"]" -> "[root] var.gcp_zone"
+		"[root] provider[\"registry.terraform.io/hashicorp/tls\"] (close)" -> "[root] tls_self_signed_cert.example (expand)"
+		"[root] root" -> "[root] meta.count-boundary (EachMode fixup)"
+		"[root] root" -> "[root] provider[\"registry.terraform.io/hashicorp/google\"] (close)"
+		"[root] root" -> "[root] provider[\"registry.terraform.io/hashicorp/tls\"] (close)"
+		"[root] tls_private_key.example (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/tls\"]"
+		"[root] tls_self_signed_cert.example (expand)" -> "[root] tls_private_key.example (expand)"
+	}
+}
+
