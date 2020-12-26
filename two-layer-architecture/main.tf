@@ -7,12 +7,6 @@ provider "google" {
   project     = var.gcp_project
   region      = var.gcp_region
   zone        = var.gcp_zone
-  credentials = file(var.gcp_auth_file_path)
-}
-
-resource "google_compute_network" "default" {
-  name                    = "multi-mig"
-  auto_create_subnetworks = "false"
 }
 
 resource "google_compute_instance_template" "default" {
@@ -23,9 +17,6 @@ resource "google_compute_instance_template" "default" {
   metadata_startup_script = file("./gceme.sh.tpl")
 
   tags = ["allow-ssh", "allow-service"]
-  labels = {
-    "key" = "value"
-  }
 
   disk {
     source_image = "debian-cloud/debian-9"
@@ -77,11 +68,6 @@ resource "google_compute_region_instance_group_manager" "default" {
 
   base_instance_name = "mig"
   target_size        = null
-
-  update_policy {
-    type           = "OPPORTUNISTIC"
-    minimal_action = "REPLACE"
-  }
 
   auto_healing_policies {
     health_check      = google_compute_health_check.mig_health_check.self_link
