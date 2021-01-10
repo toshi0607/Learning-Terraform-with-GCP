@@ -1,4 +1,4 @@
-resource "google_compute_instance" "tf_fmt" { 
+resource "google_compute_instance" "tf_fmt_example" {
   name         = "tf-fmt-test"
   machine_type = "f1-micro"
   zone = "asia-northeast1-a"

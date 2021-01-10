@@ -1,4 +1,4 @@
-resource "google_compute_instance" "tflint" { 
+resource "google_compute_instance" "tflint_example" {
   name         = "tflint-test"
   machine_type = "invalid-machine-type"
   zone         = "asia-northeast1-a"
@@ -14,7 +14,7 @@ resource "google_compute_instance" "tflint" {
   }
 }
 
-resource "google_storage_bucket" "static-site" {
+resource "google_storage_bucket" "static_site" {
   name          = "image-store.com"
   location      = "EU"
   force_destroy = true
