@@ -18,7 +18,7 @@ variable "region" {
 variable "zone" {
   description = "A zone to use the module"
   type        = string
-  default     = "asia-northeast1-a"
+  default     = "asia-northeast1-c"
 
   validation {
     condition     = contains(["asia-northeast1-a", "asia-northeast1-b", "asia-northeast1-c"], var.zone)

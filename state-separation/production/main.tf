@@ -1,7 +1,8 @@
 terraform {
   backend "gcs" {
-    # bucket  = "tf-state-toshi0607-20200827-prod"
-    # 【YOUR BUCKET】を作成したバケット名に置き換えてください。
+    # replace 【YOUR BUCKET】 with your project
+    # e.g.
+    # bucket = "tf-state-toshi0607-20200827-prod"
     bucket = 【YOUR BUCKET】
     prefix  = "terraform/test_instance/state"
   }

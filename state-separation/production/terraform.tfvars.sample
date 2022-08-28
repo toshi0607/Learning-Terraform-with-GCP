@@ -1,8 +1,9 @@
-# 利用する場合は拡張子の .sample 部分を削除してください
+# remove .sample when you try tfvars
 
+# replace 【YOUR PROJECT】 with your project
+# e.g.
 # project = "terraform-toshi0607"
-# dev用と別projectを指定すると環境の分離度が増します
-# 【YOUR PROJECT】をあなたのGCPプロジェクトに置き換えてください。
+# it is better to use different dev project from prod for isolation
 project = 【YOUR PROJECT】
 region  = "asia-northeast1"
-zone    = "asia-northeast1-a"
+zone    = "asia-northeast1-c"
