@@ -3,11 +3,12 @@ resource "google_compute_instance" "default" {
   // name         = "test2" 
   name         = "test"
   machine_type = "f1-micro"
-  zone         = "asia-northeast1-a"
+  zone         = "asia-northeast1-c"
 
   boot_disk {
     initialize_params {
-      image = "debian-cloud/debian-9"
+      # gcloud compute images list | grep debian, if the image can't be found
+      image = "debian-cloud/debian-11"
     }
   }
 
