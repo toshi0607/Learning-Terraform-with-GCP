@@ -1,7 +1,7 @@
 variable "compute_instance_zone" {
   type        = string
   description = "A zone used in compute instance"
-  default     = "asia-northeast1-a"
+  default     = "asia-northeast1-c"
 
   validation {
     condition     = contains(["asia-northeast1-a", "asia-northeast1-b", "asia-northeast1-c"], var.compute_instance_zone)
@@ -16,7 +16,7 @@ resource "google_compute_instance" "default" {
 
   boot_disk {
     initialize_params {
-      image = "debian-cloud/debian-9"
+      image = "debian-cloud/debian-11"
     }
   }
 
