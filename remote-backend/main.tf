@@ -1,22 +1,24 @@
 terraform {
   backend "gcs" {
+    # replace 【YOUR BUCKET】 with your project
+    # e.g.
     # bucket = "tf-state-toshi0607-20200827-dev"
-    # 【YOUR BUCKET】を作成したバケット名に置き換えてください。
     bucket = 【YOUR BUCKET】
     prefix = "terraform/state"
   }
 
   required_providers {
-    google = ">= 3.33.0"
+    google = ">= 4.32.0"
   }
 }
 
 provider "google" {
+  # replace 【YOUR PROJECT】 with your project
+  # e.g.
   # project = "terraform-toshi0607"
-  # 【YOUR PROJECT】をあなたのGCPプロジェクトに置き換えてください。
   project = 【YOUR PROJECT】
   region  = "asia-northeast1"
-  zone    = "asia-northeast1-a"
+  zone    = "asia-northeast1-c"
 }
 
 resource "google_compute_instance" "default" {
@@ -25,7 +27,7 @@ resource "google_compute_instance" "default" {
 
   boot_disk {
     initialize_params {
-      image = "debian-cloud/debian-9"
+      image = "debian-cloud/debian-11"
     }
   }
 
