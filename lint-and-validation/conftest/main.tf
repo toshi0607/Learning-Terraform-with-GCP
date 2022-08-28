@@ -1,5 +1,5 @@
 provider "google" {
-  version = ">= 3.33.0"
+  version = ">= 4.32.0"
 }
 
 resource "google_project_service" "gcp_api_service" {

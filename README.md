@@ -49,3 +49,7 @@ Diffrent repository: [toshi0607/GKE-Microservices-Terraform-project-template](ht
 ### Chapter 8 Lint and validation
 
 * [Lint and validation](./lint-and-validation/)
+  * [terraform fmt](./lint-and-validation/terraform-fmt)
+  * [terraform validate](./lint-and-validation/terraform-validate)
+  * [TFLint](./lint-and-validation/tflint)
+  * [Conftest](./lint-and-validation/conftest)

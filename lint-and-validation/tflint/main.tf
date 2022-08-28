@@ -1,11 +1,11 @@
 resource "google_compute_instance" "tflint_example" {
   name         = "tflint-test"
   machine_type = "invalid-machine-type"
-  zone         = "asia-northeast1-a"
+  zone         = "asia-northeast1-c"
 
   boot_disk {
     initialize_params {
-      image = "debian-cloud/debian-9"
+      image = "debian-cloud/debian-11"
     }
   }
 

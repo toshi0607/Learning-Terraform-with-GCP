@@ -18,7 +18,7 @@ no_violations {
 
 test_provider_with_version_is_denied {
   input := {
-    "provider": { { "version": ">= 3.33.0", "region": "somewhere" } }
+    "provider": { { "version": ">= 4.32.0", "region": "somewhere" } }
   }
   violations with input as input
 }
