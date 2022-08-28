@@ -1,15 +1,16 @@
 terraform {
-  required_version = "~> 0.13"
+  required_version = "~> 1.2"
   required_providers {
-    google = ">= 3.33.0"
+    google = ">= 4.32.0"
   }
 }
 
 provider "google" {
+  # replace 【YOUR PROJECT】 with your project
+  # e.g.
   # project = "terraform-toshi0607"
-  # 【YOUR PROJECT】をあなたのGCPプロジェクトに置き換えてください。
   project = 【YOUR PROJECT】
-  zone    = "asia-northeast1-a"
+  zone    = "asia-northeast1-c"
 }
 
 resource "google_compute_instance" "default" {
@@ -18,7 +19,7 @@ resource "google_compute_instance" "default" {
 
   boot_disk {
     initialize_params {
-      image = "debian-cloud/debian-9"
+      image = "debian-cloud/debian-11"
     }
   }
 
