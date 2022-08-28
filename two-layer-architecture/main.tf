@@ -1,5 +1,5 @@
 terraform {
-  required_version = ">= 0.12"
+  required_version = ">= 1.2"
 }
 
 # https://www.terraform.io/docs/providers/google/index.html
@@ -19,16 +19,12 @@ resource "google_compute_instance_template" "default" {
   tags = ["allow-ssh", "allow-service"]
 
   disk {
-    source_image = "debian-cloud/debian-9"
+    source_image = "debian-cloud/debian-11"
   }
 
   service_account {
-    scopes = [
-      "https://www.googleapis.com/auth/compute",
-      "https://www.googleapis.com/auth/logging.write",
-      "https://www.googleapis.com/auth/monitoring.write",
-      "https://www.googleapis.com/auth/devstorage.full_control",
-    ]
+    # https://cloud.google.com/compute/docs/access/service-accounts#authorization
+    scopes = ["cloud-platform"]
   }
 
   network_interface {
@@ -156,7 +152,6 @@ resource "tls_private_key" "example" {
 
 # https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/self_signed_cert
 resource "tls_self_signed_cert" "example" {
-  key_algorithm   = tls_private_key.example.algorithm
   private_key_pem = tls_private_key.example.private_key_pem
 
   # Certificate expires after 12 hours.

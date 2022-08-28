@@ -1,7 +1,8 @@
-# 利用する場合は拡張子の .sample 部分を削除してください
+# remove .sample when you try tfvars
 
+# replace 【YOUR PROJECT】 with your project
+# e.g.
 # project = "terraform-toshi0607"
-# 【YOUR PROJECT】をあなたのGCPプロジェクトに置き換えてください。
-project = 【YOUR PROJECT】
+gcp_project = 【YOUR PROJECT】
 gcp_region  = "asia-northeast1"
-gcp_zone    = "asia-northeast1-a"
+gcp_zone    = "asia-northeast1-c"
